@@ -1,0 +1,95 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$caprieasy-primary: (
+  50 : #eef3f7,
+  100 : #d5e1ec,
+  200 : #b9cddf,
+  300 : #9db9d2,
+  400 : #88aac9,
+  500 : #739bbf,
+  600 : #6b93b9,
+  700 : #6089b1,
+  800 : #567fa9,
+  900 : #436d9b,
+  A100 : #f1f8ff,
+  A200 : #beddff,
+  A400 : #8bc1ff,
+  A700 : #72b4ff,
+  contrast: (
+      50 : #000000,
+      100 : #000000,
+      200 : #000000,
+      300 : #000000,
+      400 : #000000,
+      500 : #000000,
+      600 : #000000,
+      700 : #000000,
+      800 : #ffffff,
+      900 : #ffffff,
+      A100 : #000000,
+      A200 : #000000,
+      A400 : #000000,
+      A700 : #000000,
+  )
+);
+
+$caprieasy-accent: (
+  50 : #ffffff,
+  100 : #ffffff,
+  200 : #ffffff,
+  300 : #ffffff,
+  400 : #ffffff,
+  500 : #fff8e1,
+  600 : #fff1c2,
+  700 : #ffeaa4,
+  800 : #ffe385,
+  900 : #ffdb67,
+  A100 : #ffffff,
+  A200 : #ffffff,
+  A400 : #ffffff,
+  A700 : #fffefa,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #000000,
+    600 : #000000,
+    700 : #000000,
+    800 : #000000,
+    900 : #000000,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+
+$caprieasy-primary: mat-palette($caprieasy-primary, 300, 500, 700);
+$caprieasy-accent:  mat-palette($caprieasy-accent, 900, 400, 700);
+
+$caprieasy-warn:    mat-palette($mat-red);
+
+$caprieasy: mat-light-theme($caprieasy-primary, $caprieasy-accent, $caprieasy-warn);
+
+@import './app/navigation/navtabs/navtabs.component-theme.scss';
+
+@include angular-material-theme($caprieasy);
+
+// Navtabs component scss file
+@include navtabs-component-theme($caprieasy);
+
+
+
+// All our styles will go here
+.mat-list-option:hover, 
+.mat-list-option.mat-list-item-focus, 
+.mat-nav-list .mat-list-item:hover, 
+.mat-nav-list .mat-list-item.mat-list-item-focus {
+  background-color: mat-color($caprieasy-primary, 300);
+  color: mat-color($caprieasy-primary, 900);
+}

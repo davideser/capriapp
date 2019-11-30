@@ -1,0 +1,14 @@
+@import '~@angular/material/theming';
+
+@mixin navtabs-component-theme($caprieasy) {
+
+  $primary: map-get($caprieasy, primary);
+  $accent: map-get($caprieasy, accent);
+
+  // Put all your theming styles here
+
+  .navtabs-container {
+    background-color: mat-color($caprieasy-primary, 500);
+    align-content: center;
+  }
+}
